@@ -6,183 +6,203 @@
     <title>Controller</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-slate-800">
-    <div>
-      <div
-        id="connection_info"
-        class="bg-slate-400 text-center shadow rounded mt-1 mx-4 pb-5"
-      >
-        <p class="text-red-600">Device connected...</p>
-        <p class="text-black">Address: 192.168.0.121:1234</p>
-        <div
-          class="border-red-600 w-1/2 border-2 mx-auto rounded bg-red-400 my-5 cursor-pointer select-none"
-          id="logout"
-        >
-          Disconnect device and erase connection info
-        </div>
-      </div>
-      <div
-        id="connection_panel"
-        class="bg-slate-400 text-center shadow rounded mt-1 mx-4 p-4"
-      >
-        <input
-          class="text-red-600 w-full px-2 py-1 rounded"
-          placeholder="Ip with server port"
-          id="address"
-        />
-        <input
-          class="text-red-600 w-full mt-4 px-2 py-1 rounded"
-          placeholder="Secret key"
-          type="password"
-          id="secret_key"
-        />
-        <div
-          id="connect_button"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Connect
-        </div>
-      </div>
-    </div>
-    <div id="full_ui">
-      <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
-        <div
-          onclick="exec(`systemctl reboot`)"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Reboot
-        </div>
-        <div
-          onclick="exec(`systemctl poweroff`)"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Poweroff
-        </div>
-        <div
-          onclick="exec(`systemctl suspend`)"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Suspend
-        </div>
-        <div
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-          onclick="exec(`betterlockscreen -l dimblur`)"
-        >
-          lock
-        </div>
-        <div
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-          onclick="exec(`i3 exit`)"
-        >
-          Logout
-        </div>
-      </div>
-
-      <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
-        <div
-          onclick="exec(`firefox`)"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Firefox
-        </div>
-
-        <div
-          onclick="exec(`firefox www.youtube.com`)"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Youtube
-        </div>
-        <div
-          onclick="exec(`firefox www.facebook.com`)"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Facebook
-        </div>
-      </div>
-
-      <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
+  <body class="flex justify-center bg-black">
+    <div class="max-w-xl my-0 py-0 bg-slate-400">
+      <div class="bg-slate-800 min-h-screen my-0 px-10 py-10 mx-auto">
         <div>
           <div
-            onclick="exec(`playerctl Previous`)"
-            class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            id="connection_info"
+            class="bg-slate-400 text-center shadow rounded mt-0 mx-4 pb-5"
           >
-            Previous
+            <p class="text-red-600">Device connected...</p>
+            <p class="text-black">Address: 192.168.0.121:1234</p>
+            <div
+              class="border-red-600 w-1/2 border-2 mx-auto rounded bg-red-400 my-5 cursor-pointer select-none"
+              id="logout"
+            >
+              Disconnect device and erase connection info
+            </div>
           </div>
           <div
-            onclick="exec(`playerctl play-pause`)"
-            class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            id="connection_panel"
+            class="bg-slate-400 text-center shadow rounded mt-1 mx-4 p-4"
           >
-            Pause / Play
+            <input
+              class="text-red-600 w-full px-2 py-1 rounded"
+              placeholder="Ip with server port"
+              id="address"
+            />
+            <input
+              class="text-red-600 w-full mt-4 px-2 py-1 rounded"
+              placeholder="Secret key"
+              type="password"
+              id="secret_key"
+            />
+            <div
+              id="connect_button"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Connect
+            </div>
           </div>
         </div>
-        <div>
+        <div id="full_ui">
           <div
-            onclick="exec(`playerctl next`)"
-            class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap"
           >
-            Next
+            <div
+              onclick="exec(`systemctl reboot`)"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Reboot
+            </div>
+            <div
+              onclick="exec(`systemctl poweroff`)"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Poweroff
+            </div>
+            <div
+              onclick="exec(`systemctl suspend`)"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Suspend
+            </div>
+            <div
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+              onclick="exec(`betterlockscreen -l dimblur`)"
+            >
+              lock
+            </div>
+            <div
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+              onclick="exec(`i3 exit`)"
+            >
+              Sign out user
+            </div>
           </div>
-          <div
-            onclick="exec(`playerctl stop`)"
-            class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-          >
-            Stop
-          </div>
-        </div>
-      </div>
 
-      <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
-        <div
-          onclick="exec(`pulseaudio-ctl up +1%`)"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Volume +
-        </div>
-        <div
-          onclick="exec(`pulseaudio-ctl down +1%`)"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Volume -
-        </div>
-        <div
-          onclick="exec(`pulseaudio-ctl mute`)"
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
-        >
-          Mute / Unmute
-        </div>
-      </div>
+          <div
+            class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap"
+          >
+            <div
+              onclick="exec(`firefox`)"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Firefox
+            </div>
 
-      <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
-        <div
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white flex"
-        >
-          <input
-            class="bg-slate-500 rounded focus:outline-none px-2 py-1"
-            type="text"
-          />
+            <div
+              onclick="exec(`firefox www.youtube.com`)"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Youtube
+            </div>
+            <div
+              onclick="exec(`firefox www.facebook.com`)"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Facebook
+            </div>
+          </div>
+
           <div
-            class="bg-red-700 flex items-center justify-center px-2 rounded mx-1"
+            class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap"
           >
-            kill
+            <div>
+              <div
+                onclick="exec(`playerctl Previous`)"
+                class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+              >
+                Previous
+              </div>
+              <div
+                onclick="exec(`playerctl play-pause`)"
+                class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+              >
+                Pause / Play
+              </div>
+            </div>
+            <div>
+              <div
+                onclick="exec(`playerctl next`)"
+                class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+              >
+                Next
+              </div>
+              <div
+                onclick="exec(`playerctl stop`)"
+                class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+              >
+                Stop
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap"
+          >
+            <div
+              onclick="exec(`pulseaudio-ctl up +1%`)"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Volume +
+            </div>
+            <div
+              onclick="exec(`pulseaudio-ctl down +1%`)"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Volume -
+            </div>
+            <div
+              onclick="exec(`pulseaudio-ctl mute`)"
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+            >
+              Mute / Unmute
+            </div>
+          </div>
+
+          <div
+            class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap"
+          >
+            <div
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white flex"
+            >
+              <input
+              id="kill_command"
+                class="bg-slate-500 rounded focus:outline-none px-2 py-1"
+                type="text"
+              />
+              <div
+              id="kill_button"
+                class="bg-red-700 flex items-center justify-center px-2 rounded mx-1"
+              >
+                kill
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap"
+          >
+            <div
+              class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white flex"
+            >
+              <input
+                class="bg-slate-500 rounded focus:outline-none px-2 py-1"
+                type="text"
+                id="command_exec"
+              />
+              <div
+                id="exec_button"
+                class="bg-red-700 flex items-center justify-center px-2 rounded mx-1"
+              >
+                Exec
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
-        <div
-          class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white flex"
-        >
-          <input
-            class="bg-slate-500 rounded focus:outline-none px-2 py-1"
-            type="text"
-          />
-          <div
-            class="bg-red-700 flex items-center justify-center px-2 rounded mx-1"
-          >
-            Exec
-          </div>
-        </div>
+        <script src="./index.js"></script>
       </div>
     </div>
-    <script src="./index.js"></script>
   </body>
 </html>

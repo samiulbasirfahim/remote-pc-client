@@ -5,6 +5,10 @@ const address_element = document.getElementById("address")
 const secret_key_element = document.getElementById("secret_key")
 const connect_button = document.getElementById("connect_button")
 const logout = document.getElementById("logout")
+const exec_command_element = document.getElementById("command_exec")
+const exec_button = document.getElementById("exec_button")
+const kill_command_element = document.getElementById("kill_command")
+const kill_button = document.getElementById("kill_button")
 let addressServer
 let secret_key_server
 
@@ -78,6 +82,17 @@ if (!savedLoginInfo) {
 connect_button.addEventListener("click", () =>
   connect(address_element.value, secret_key_element.value)
 )
+
+exec_button.addEventListener("click", () => {
+  exec(exec_command_element.value)
+  exec_command_element.value = ""
+})
+kill_button.addEventListener("click", () => {
+  exec(`killall -q ${kill_command_element.value}`)
+  kill_command_element.value = ""
+})
+
+
 
 logout.addEventListener("click", () => {
   window.localStorage.removeItem("remote-pc-controller")
