@@ -10,10 +10,16 @@
     <div>
       <div
         id="connection_info"
-        class="bg-slate-400 text-center shadow rounded mt-1 mx-4"
+        class="bg-slate-400 text-center shadow rounded mt-1 mx-4 pb-5"
       >
         <p class="text-red-600">Device connected...</p>
         <p class="text-black">Address: 192.168.0.121:1234</p>
+        <div
+          class="border-red-600 w-1/2 border-2 mx-auto rounded bg-red-400 my-5 cursor-pointer select-none"
+          id="logout"
+        >
+          Disconnect device and erase connection info
+        </div>
       </div>
       <div
         id="connection_panel"
@@ -22,13 +28,15 @@
         <input
           class="text-red-600 w-full px-2 py-1 rounded"
           placeholder="Ip with server port"
+          id="address"
         />
         <input
           class="text-red-600 w-full mt-4 px-2 py-1 rounded"
           placeholder="Secret key"
+          id="secret_key"
         />
-
         <div
+          id="connect_button"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
           Connect
