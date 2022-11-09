@@ -4,8 +4,9 @@ const full_ui = document.getElementById("full_ui")
 const address_element = document.getElementById("address")
 const secret_key_element = document.getElementById("secret_key")
 const connect_button = document.getElementById("connect_button")
-
 const logout = document.getElementById("logout")
+let addressServer
+let secret_key_server
 
 const savedLoginInfo = JSON.parse(
   window.localStorage.getItem("remote-pc-controller")
@@ -31,6 +32,8 @@ const connect = (address, secret) => {
     .then((data) => {
       console.log(data)
       if (data.Status) {
+        addressServer = address
+        secret_key_server = secret
         window.localStorage.setItem(
           "remote-pc-controller",
           JSON.stringify({
@@ -47,6 +50,20 @@ const connect = (address, secret) => {
         return hide_element(connection_info)
       }
     })
+}
+
+const exec = (command) => {
+  command = command + " &"
+  fetch(`http://${addressServer}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: secret_key_server,
+    },
+    body: JSON.stringify({
+      command: command,
+    }),
+  })
 }
 
 if (savedLoginInfo) {

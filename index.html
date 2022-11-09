@@ -33,6 +33,7 @@
         <input
           class="text-red-600 w-full mt-4 px-2 py-1 rounded"
           placeholder="Secret key"
+          type="password"
           id="secret_key"
         />
         <div
@@ -46,27 +47,32 @@
     <div id="full_ui">
       <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
         <div
+          onclick="exec(`systemctl reboot`)"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
           Reboot
         </div>
         <div
+          onclick="exec(`systemctl poweroff`)"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
           Poweroff
         </div>
         <div
+          onclick="exec(`systemctl suspend`)"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
           Suspend
         </div>
         <div
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+          onclick="exec(`betterlockscreen -l dimblur`)"
         >
           lock
         </div>
         <div
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
+          onclick="exec(`i3 exit`)"
         >
           Logout
         </div>
@@ -74,17 +80,20 @@
 
       <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
         <div
+          onclick="exec(`firefox`)"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
           Firefox
         </div>
 
         <div
+          onclick="exec(`firefox www.youtube.com`)"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
           Youtube
         </div>
         <div
+          onclick="exec(`firefox www.facebook.com`)"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
           Facebook
@@ -94,11 +103,13 @@
       <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
         <div>
           <div
+            onclick="exec(`playerctl Previous`)"
             class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
           >
             Previous
           </div>
           <div
+            onclick="exec(`playerctl play-pause`)"
             class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
           >
             Pause / Play
@@ -106,11 +117,13 @@
         </div>
         <div>
           <div
+            onclick="exec(`playerctl next`)"
             class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
           >
             Next
           </div>
           <div
+            onclick="exec(`playerctl stop`)"
             class="text-center cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
           >
             Stop
@@ -120,19 +133,22 @@
 
       <div class="flex bg-slate-400 justify-center mt-3 rounded mx-4 flex-wrap">
         <div
+          onclick="exec(`pulseaudio-ctl up +1%`)"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
           Volume +
         </div>
         <div
+          onclick="exec(`pulseaudio-ctl down +1%`)"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
           Volume -
         </div>
         <div
+          onclick="exec(`pulseaudio-ctl mute`)"
           class="cursor-pointer px-4 py-1 bg-blue-800 rounded-md m-2 select-none text-white"
         >
-          Mute
+          Mute / Unmute
         </div>
       </div>
 
